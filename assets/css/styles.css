@@ -425,9 +425,41 @@ a { color: inherit; }
   .tech-list { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Phone: collapse the feature/tech grids into single-row, swipeable
+   carousels instead of long stacks, so the page stays short. */
+@media (max-width: 700px) {
+  .hero { padding: 40px 0 48px; }
+  .section { padding: 48px 0; }
+  .section-lede { margin-bottom: 28px; }
+
+  .feature-grid,
+  .tech-list {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 14px;
+    margin: 0 -24px;
+    padding: 4px 24px 10px;
+  }
+
+  .feature-grid::-webkit-scrollbar,
+  .tech-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .feature-card,
+  .tech-list li {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+}
+
 @media (max-width: 560px) {
   .site-nav { display: none; }
-  .feature-grid { grid-template-columns: 1fr; }
-  .tech-list { grid-template-columns: 1fr; }
+  .feature-card,
+  .tech-list li { flex-basis: 84%; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
