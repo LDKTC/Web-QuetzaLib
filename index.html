@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuetzaLib — scan, catalog, and read your own library</title>
+<meta name="description" content="QuetzaLib is a Flutter Android app that scans a book's ISBN barcode, looks up its metadata, and adds it to your personal library stored locally on-device.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2444'/%3E%3Cpath d='M18 14h14a6 6 0 0 1 6 6v30l-10-6-10 6V14z' fill='%23f2a341'/%3E%3Crect x='40' y='20' width='10' height='4' fill='%2364d6c2'/%3E%3Crect x='40' y='27' width='6' height='4' fill='%2364d6c2'/%3E%3Crect x='40' y='34' width='8' height='4' fill='%2364d6c2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      QuetzaLib
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#tech">Tech</a>
+      <a href="#download">Download</a>
+      <a href="https://github.com/LDKTC/App-QuetzaLib">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Android · Flutter · Free &amp; open source</p>
+        <h1>Scan a barcode. Build your library.</h1>
+        <p class="lede">
+          QuetzaLib scans the ISBN on the back of a book, looks up its
+          title, author, and cover, and adds it to a personal library that
+          lives entirely on your phone — no account, no cloud, no sync.
+        </p>
+        <div class="cta-row">
+          <a id="download-btn" class="btn btn-primary" href="https://github.com/LDKTC/App-QuetzaLib/releases/latest">
+            Download latest APK
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/LDKTC/App-QuetzaLib">View source</a>
+        </div>
+        <p class="hero-meta" id="release-meta" aria-live="polite"></p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="scan-frame">
+              <div class="scan-line"></div>
+            </div>
+            <div class="scan-caption">ISBN 978-4-06-...</div>
+            <div class="mock-row"></div>
+            <div class="mock-shelf">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="section">
+    <div class="wrap">
+      <h2>Everything happens on the shelf you already own</h2>
+      <p class="section-lede">One scan gets a book into your library. From there QuetzaLib tracks what it looks like, where you are in it, and where you last saw it.</p>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="scan"></div>
+          <h3>Scan-to-add</h3>
+          <p>Point the camera at a barcode and the ISBN-10/13 is read and looked up automatically — or type/paste an ISBN if there's no barcode to scan.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="search"></div>
+          <h3>Layered metadata lookup</h3>
+          <p>Google Books first, Open Library as a fallback, and RanobeDB as a specialized last resort for light novels that the general catalogs miss.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="camera"></div>
+          <h3>Cover &amp; spine scanning</h3>
+          <p>Capture a book's front, spine, and back into a reusable preset using an auto-detecting, auto-cropping document scanner — no more crooked cover photos.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="text"></div>
+          <h3>Scan-to-fill OCR</h3>
+          <p>Photograph the title, author, or publisher text and OCR fills the field — always shown back to you for approval before anything is written.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="bookmark"></div>
+          <h3>Saved pages</h3>
+          <p>Photograph a page or illustration worth remembering and keep it as an in-app reminder, with an optional label and note.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="stamp"></div>
+          <h3>Reading-status stamps</h3>
+          <p>A timeline of reading / finished / dropped / paused stamps per book, instead of one status field that overwrites your history.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="shelf"></div>
+          <h3>Shelf view</h3>
+          <p>Browse as a visual shelf of spines or covers, with a List/Shelf toggle and text fallback for books without a scanned cover yet.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="lock"></div>
+          <h3>Fully local</h3>
+          <p>Every book, photo, and stamp lives in an on-device SQLite database. Nothing is synced anywhere unless you back it up yourself.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="update"></div>
+          <h3>In-app updates</h3>
+          <p>QuetzaLib isn't on the Play Store, so Settings → App update checks GitHub Releases and installs newer builds over the existing app.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech" class="section section-alt">
+    <div class="wrap">
+      <h2>Built with</h2>
+      <ul class="tech-list">
+        <li><strong>Flutter</strong><span>Android target, Material 3</span></li>
+        <li><strong>sqflite</strong><span>local on-device storage</span></li>
+        <li><strong>mobile_scanner</strong><span>barcode scanning</span></li>
+        <li><strong>ML Kit document scanner</strong><span>cover/spine capture</span></li>
+        <li><strong>ML Kit text recognition</strong><span>on-device OCR</span></li>
+        <li><strong>Cloud Vision API</strong><span>optional Thai-script OCR</span></li>
+        <li><strong>Google Books &amp; Open Library</strong><span>metadata lookup</span></li>
+        <li><strong>RanobeDB</strong><span>light novel fallback</span></li>
+        <li><strong>provider</strong><span>state management</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="download" class="section download-section">
+    <div class="wrap download-inner">
+      <h2>Get QuetzaLib</h2>
+      <p class="section-lede">
+        QuetzaLib is distributed as a signed release APK on GitHub — not
+        through the Play Store. Download it, allow the install prompt once,
+        and future versions can update themselves in-app.
+      </p>
+      <div class="cta-row cta-row-center">
+        <a id="download-btn-2" class="btn btn-primary btn-lg" href="https://github.com/LDKTC/App-QuetzaLib/releases/latest">
+          Download latest APK
+        </a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/LDKTC/App-QuetzaLib/releases">All releases</a>
+      </div>
+      <p class="hero-meta" id="release-meta-2" aria-live="polite"></p>
+      <p class="fine-print">
+        Android will ask you to allow installs from this source the first
+        time — that's the standard sideload flow, not a QuetzaLib-specific
+        step. Source is MIT-licensed on
+        <a href="https://github.com/LDKTC/App-QuetzaLib">GitHub</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>QuetzaLib — a personal library app, built with Flutter.</span>
+    <nav aria-label="Footer">
+      <a href="https://github.com/LDKTC/App-QuetzaLib">App source</a>
+      <a href="https://github.com/LDKTC/App-QuetzaLib/blob/main/LICENSE">License</a>
+      <a href="https://github.com/LDKTC/Web-QuetzaLib">This site's source</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
