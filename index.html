@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QuetzaLib — scan, catalog, and read your own library</title>
 <meta name="description" content="QuetzaLib is a Flutter Android app that scans a book's ISBN barcode, looks up its metadata, and adds it to your personal library stored locally on-device.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2444'/%3E%3Cpath d='M18 14h14a6 6 0 0 1 6 6v30l-10-6-10 6V14z' fill='%23f2a341'/%3E%3Crect x='40' y='20' width='10' height='4' fill='%2364d6c2'/%3E%3Crect x='40' y='27' width='6' height='4' fill='%2364d6c2'/%3E%3Crect x='40' y='34' width='8' height='4' fill='%2364d6c2'/%3E%3C/svg%3E">
+<link rel="icon" href="assets/img/icon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/img/icon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -13,7 +15,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <img class="brand-mark" src="assets/img/icon-48.png" alt="" width="24" height="24">
       QuetzaLib
     </a>
     <nav class="site-nav" aria-label="Primary">
@@ -47,6 +49,7 @@
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="phone">
+          <img class="app-icon-badge" src="assets/img/icon-180.png" alt="">
           <div class="phone-screen">
             <div class="scan-frame">
               <div class="scan-line"></div>
@@ -77,7 +80,7 @@
         <article class="feature-card">
           <div class="feature-icon" data-icon="search"></div>
           <h3>Layered metadata lookup</h3>
-          <p>Google Books first, Open Library as a fallback, and RanobeDB as a specialized last resort for light novels that the general catalogs miss.</p>
+          <p>Google Books first, Open Library as a fallback, and RanobeDB as a specialized last resort for light novels — resolved in the scanned ISBN's own language, not just English.</p>
         </article>
 
         <article class="feature-card">
@@ -90,6 +93,12 @@
           <div class="feature-icon" data-icon="text"></div>
           <h3>Scan-to-fill OCR</h3>
           <p>Photograph the title, author, or publisher text and OCR fills the field — always shown back to you for approval before anything is written.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="camera"></div>
+          <h3>Preview before you save</h3>
+          <p>A cover preset is auto-created from the looked-up thumbnail as soon as you scan a book, so you see what it'll look like on the shelf before committing.</p>
         </article>
 
         <article class="feature-card">
@@ -108,6 +117,18 @@
           <div class="feature-icon" data-icon="shelf"></div>
           <h3>Shelf view</h3>
           <p>Browse as a visual shelf of spines or covers, with a List/Shelf toggle and text fallback for books without a scanned cover yet.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="category"></div>
+          <h3>Categories &amp; sorting</h3>
+          <p>Sort by title, author, date added, or series (down to the decimal volume), grouped by language and category, with live book counts in every filter.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon" data-icon="scan"></div>
+          <h3>Scan to find</h3>
+          <p>Already own the book in your hand? Scan its barcode to jump straight to its shelf entry instead of typing a search.</p>
         </article>
 
         <article class="feature-card">
@@ -144,6 +165,7 @@
 
   <section id="download" class="section download-section">
     <div class="wrap download-inner">
+      <img class="download-logo" src="assets/img/logo.png" alt="QuetzaLib" width="180" height="195">
       <h2>Get QuetzaLib</h2>
       <p class="section-lede">
         QuetzaLib is distributed as a signed release APK on GitHub — not
