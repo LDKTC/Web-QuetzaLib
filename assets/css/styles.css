@@ -85,11 +85,10 @@ a { color: inherit; }
 }
 
 .brand-mark {
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  background: linear-gradient(155deg, var(--amber) 0%, var(--amber) 55%, var(--teal) 55%, var(--teal) 100%);
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -195,12 +194,26 @@ a { color: inherit; }
 .hero-art { display: flex; justify-content: center; }
 
 .phone {
+  position: relative;
   width: 240px;
   height: 480px;
   background: var(--indigo);
   border-radius: 34px;
   padding: 14px;
   box-shadow: var(--shadow);
+}
+
+.app-icon-badge {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: var(--surface);
+  padding: 6px;
+  box-shadow: var(--shadow);
+  object-fit: contain;
 }
 
 .phone-screen {
@@ -384,6 +397,13 @@ a { color: inherit; }
 
 .download-inner { text-align: center; }
 .download-inner .section-lede { margin-bottom: 32px; }
+
+.download-logo {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
 
 .fine-print {
   margin: 26px auto 0;

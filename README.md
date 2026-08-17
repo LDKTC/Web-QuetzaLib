@@ -5,7 +5,8 @@ Flutter Android app that scans a book's ISBN barcode, looks up its
 metadata, and adds it to a personal library stored locally on-device.
 
 Plain static HTML/CSS/JS — no build step. `index.html` is the page,
-`assets/` holds its styles and a small script that pulls the latest
+`assets/` holds its styles, the app icon/logo artwork (`assets/img/`,
+sourced from the app repo), and a small script that pulls the latest
 release tag/APK from the GitHub Releases API for the download button.
 
 ## Deployment
